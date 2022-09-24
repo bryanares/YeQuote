@@ -7,7 +7,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
 //base url
-private const val BASE_URL = "https://api.kanye."
+private const val BASE_URL = "https://api.kanye.rest"
 
 
 //build Moshi object with Kotlin adapter factory for Retrofit to to parse the JSON
@@ -23,7 +23,7 @@ private val retrofit = Retrofit.Builder()
 
 //Api interface with functions to the network
 interface YeApiService{
-    @GET("rest")
+    @GET(BASE_URL)
     suspend fun getYe(): Ye
 }
 
