@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".ui.QuotesFragment">
 
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.brian.tellinye.ui.YeViewModel" />
+        <variable
+            name="ye"
+            type="com.brian.tellinye.network.Ye" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <ImageView
         android:id="@+id/quoteImageView"
         android:layout_width="wrap_content"
@@ -21,12 +31,12 @@
 
     <TextView
         android:id="@+id/quoteTextView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textSize="30dp"
         android:textAlignment="center"
-        android:text="I don't wanna see no woke tweets or hear no woke raps ... it's show time ... it's a whole different energy right now"
+        tools:text="I don't wanna see no woke tweets or hear no woke raps ... it's show time ... it's a whole different energy right now"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quoteImageView" />
@@ -52,4 +62,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</layout>
