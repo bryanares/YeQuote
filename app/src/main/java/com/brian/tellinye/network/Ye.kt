@@ -1,3 +1,5 @@
 package com.brian.tellinye.network
 
-class Ye : ArrayList<YeItem>()
+data class Ye(
+    val quote: String
+)
