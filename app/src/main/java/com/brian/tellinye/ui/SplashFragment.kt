@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.brian.tellinye.R
+import com.brian.tellinye.databinding.FragmentSplashBinding
 
 
 class SplashFragment : Fragment() {
@@ -15,6 +17,11 @@ class SplashFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_splash, container, false)
+        val binding = FragmentSplashBinding.inflate(inflater, container, false)
+
+        binding.startButton.setOnClickListener {
+            findNavController().navigate(R.id.action_splashFragment_to_quotesFragment2)
+        }
+        return binding.root
     }
 }
