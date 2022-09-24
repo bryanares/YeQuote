@@ -6,13 +6,17 @@
     app:startDestination="@id/splashFragment">
 
     <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.brian.tellinye.SplashFragment"
-        android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" />
-    <fragment
         android:id="@+id/quotesFragment"
         android:name="com.brian.tellinye.ui.QuotesFragment"
         android:label="fragment_quotes"
         tools:layout="@layout/fragment_quotes" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.brian.tellinye.ui.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_quotesFragment2"
+            app:destination="@id/quotesFragment" />
+    </fragment>
 </navigation>
