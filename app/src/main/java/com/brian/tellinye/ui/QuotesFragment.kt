@@ -25,8 +25,8 @@ class QuotesFragment : Fragment() {
         //call viewmodel method
         viewModel.getYeQuote()
         binding.lifecycleOwner = this
-//        val text = binding.ye?.quote
-//        binding.quoteTextView.text = text
+        val text = binding.ye?.quote
+        binding.quoteTextView.text = text
 
         binding.quoteButton.setOnClickListener {
             viewModel.getYeQuote()
