@@ -25,11 +25,12 @@ class QuotesFragment : Fragment() {
         //call viewmodel method
         viewModel.getYeQuote()
         binding.lifecycleOwner = this
-        val text = binding.ye?.quote
-        binding.quoteTextView.text = text
+        // Get and Display the loaded quote from SplashFragment
+        binding.quoteTextView.text = viewModel.getYeQuote()
 
         binding.quoteButton.setOnClickListener {
-            viewModel.getYeQuote()
+            // Get and display more quotes on button click
+            binding.quoteTextView.text = viewModel.getYeQuote()
         }
         val view = binding.root
         return view
