@@ -19,7 +19,7 @@ class YeViewModel: ViewModel() {
 
 
     //function to get the quote
-    fun getYeQuote(): String? {
+    fun getYeQuote(): MutableLiveData<Ye> {
         viewModelScope.launch {
             try {
                 _ye.value = YeApi.retrofitService.getYe()
@@ -27,6 +27,6 @@ class YeViewModel: ViewModel() {
                 Log.e("ViewModel", "Error fetching data")
             }
         }
-        return _ye.value?.quote
+        return _ye
     }
 }
