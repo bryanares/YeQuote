@@ -54,4 +54,6 @@ dependencies {
 
     // Moshi
     implementation 'com.squareup.moshi:moshi-kotlin:1.13.0'
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }
