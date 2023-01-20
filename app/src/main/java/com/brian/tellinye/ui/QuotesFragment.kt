@@ -30,6 +30,7 @@ class QuotesFragment : Fragment() {
 
         binding.quoteButton.setOnClickListener {
             // Get and display more quotes on button click
+            viewModel.getYeQuote()
             binding.quoteTextView.text = viewModel.getYeQuote().value?.quote
         }
         val view = binding.root
