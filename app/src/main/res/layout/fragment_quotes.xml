@@ -11,7 +11,7 @@
             type="com.brian.tellinye.ui.YeViewModel" />
         <variable
             name="ye"
-            type="com.brian.tellinye.network.Ye" />
+            type="com.brian.tellinye.models.Ye" />
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
