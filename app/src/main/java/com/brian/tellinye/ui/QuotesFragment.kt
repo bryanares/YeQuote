@@ -1,10 +1,10 @@
 package com.brian.tellinye.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.brian.tellinye.databinding.FragmentQuotesBinding
 
@@ -12,8 +12,6 @@ import com.brian.tellinye.databinding.FragmentQuotesBinding
 class QuotesFragment : Fragment() {
 
     private val viewModel: YeViewModel by activityViewModels()
-//    private var _binding: FragmentQuotesBinding? = null
-//    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,19 +19,21 @@ class QuotesFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding = FragmentQuotesBinding.inflate(inflater, container, false)
+        //call viewModel method
 
-        //call viewmodel method
-        viewModel.getYeQuote()
+        viewModel.setRepo(requireActivity().application)
+        viewModel.getQuote()
         binding.lifecycleOwner = this
-        // Get and Display the loaded quote from SplashFragment
-        binding.quoteTextView.text = viewModel.getYeQuote().value?.quote
 
+        // Get and Display the loaded quote from SplashFragment
         binding.quoteButton.setOnClickListener {
-            // Get and display more quotes on button click
-            viewModel.getYeQuote()
-            binding.quoteTextView.text = viewModel.getYeQuote().value?.quote
+            viewModel.getQuote()
         }
-        val view = binding.root
-        return view
+
+        viewModel.yeQuotes.observe(this.viewLifecycleOwner) {
+            binding.quoteTextView?.text = it.quote
+        }
+
+        return binding.root
     }
 }
